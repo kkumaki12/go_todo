@@ -43,7 +43,7 @@ func main() {
 	// t, _ := models.GetTodo(1)
 	// fmt.Println(t)
 
-	user, _ := models.GetUser(2)
+	// user, _ := models.GetUser(2)
 	// user.CreateTodo("Second Todo")
 
 	// todos, _ := models.GetTodos()
@@ -51,8 +51,14 @@ func main() {
 	// 	fmt.Println(v)
 	// }
 
-	todos, _ := user.GetTodosByUser()
-	for _, v := range todos {
-		fmt.Println(v)
-	}
+	// todos, _ := user.GetTodosByUser()
+	// for _, v := range todos {
+	// 	fmt.Println(v)
+	// }
+
+	t, _ := models.GetTodo(1)
+	t.Content = "Update Todo"
+	t.UpdateTodo()
+	t, _ = models.GetTodo(1)
+	fmt.Println(t)
 }
